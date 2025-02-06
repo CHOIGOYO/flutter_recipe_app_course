@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class CustomContainer extends StatelessWidget {
   final double h;
+  final double? w;
   final Widget child;
   final Color backgroundColor;
   final double borderRadius;
@@ -9,6 +10,7 @@ class CustomContainer extends StatelessWidget {
   const CustomContainer(
       {super.key,
       required this.h,
+      this.w,
       required this.child,
       this.borderRadius = 10,
       this.backgroundColor = Colors.transparent,
@@ -18,6 +20,7 @@ class CustomContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: h,
+      width: w,
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: BorderRadius.circular(borderRadius),

@@ -14,7 +14,7 @@ abstract class TextStyles {
   static TextStyle smallTextBold = TextStyle(
       fontSize: 14, fontWeight: FontWeight.bold, fontFamily: 'Poppins');
   static TextStyle smallerTextBold = TextStyle(
-      fontSize: 1, fontWeight: FontWeight.bold, fontFamily: 'Poppins');
+      fontSize: 11, fontWeight: FontWeight.bold, fontFamily: 'Poppins');
   static TextStyle tittleTextRegular = TextStyle(
       fontSize: 50, fontWeight: FontWeight.normal, fontFamily: 'Poppins');
   static TextStyle headerTextRegular = TextStyle(
@@ -28,7 +28,7 @@ abstract class TextStyles {
   static TextStyle smallTextRegular = TextStyle(
       fontSize: 14, fontWeight: FontWeight.normal, fontFamily: 'Poppins');
   static TextStyle smallerTextRegular = TextStyle(
-      fontSize: 1, fontWeight: FontWeight.normal, fontFamily: 'Poppins');
+      fontSize: 11, fontWeight: FontWeight.normal, fontFamily: 'Poppins');
 }
 
 class CustomText extends StatelessWidget {

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:recipe_app/core/presentation/components/coustom_filter_button.dart';
 import 'package:recipe_app/core/presentation/components/custom_button.dart';
 import 'package:recipe_app/core/presentation/components/custom_inputField.dart';
+import 'package:recipe_app/core/presentation/components/thumps_button.dart';
 import 'package:recipe_app/ui/color_styles.dart';
 import 'package:recipe_app/ui/text_styles.dart';
 
@@ -72,6 +74,39 @@ class _MyHomePageState extends State<MyHomePage> {
             hintText: 'disabled',
             haveSearchIcon: true,
             isDisabled: true,
+          ),
+          Row(
+            children: [
+              CoustomFilterButton(
+                text: '5',
+                onTap: () {
+                  debugPrint('5 Button pressed');
+                },
+                haveIcon: true,
+              ),
+              CoustomFilterButton(
+                text: 'text',
+                onTap: () {
+                  debugPrint('text Button pressed');
+                },
+              ),
+              ThumpsButton(
+                isUp: true,
+                isPressed: false,
+                onTap: () {
+                  debugPrint('👍 Button pressed');
+                },
+                text: '3',
+              ),
+              ThumpsButton(
+                isUp: false,
+                isPressed: true,
+                onTap: () {
+                  debugPrint('👎 Button pressed');
+                },
+                text: '3',
+              )
+            ],
           )
         ],
       ),
