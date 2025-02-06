@@ -5,7 +5,7 @@ import 'package:recipe_app/ui/text_styles.dart';
 
 enum ButtonSize { big, medium, small }
 
-class CustomButton extends StatelessWidget {
+class CustomButton extends StatefulWidget {
   final VoidCallback onPressed;
   final CustomText text;
   final bool isDisabled;
@@ -20,9 +20,14 @@ class CustomButton extends StatelessWidget {
       this.haveIcon = false});
 
   @override
+  State<CustomButton> createState() => _CustomButtonState();
+}
+
+class _CustomButtonState extends State<CustomButton> {
+  @override
   Widget build(BuildContext context) {
     double buttonHeight = 0;
-    switch (size) {
+    switch (widget.size) {
       case ButtonSize.big:
         buttonHeight = 60;
         break;
@@ -34,19 +39,19 @@ class CustomButton extends StatelessWidget {
         break;
     }
     return InkWell(
-      onTap: isDisabled ? null : onPressed,
+      onTap: widget.isDisabled ? null : widget.onPressed,
       child: CustomContainer(
         backgroundColor:
-            isDisabled ? ColorStyles.gray4 : ColorStyles.primary100,
+            widget.isDisabled ? ColorStyles.gray4 : ColorStyles.primary100,
         h: buttonHeight,
         child: Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                  margin: EdgeInsets.only(left: haveIcon ? 40 : 0),
-                  child: text),
-              haveIcon
+                  margin: EdgeInsets.only(left: widget.haveIcon ? 40 : 0),
+                  child: widget.text),
+              widget.haveIcon
                   ? Container(
                       margin: EdgeInsets.only(left: 20),
                       child: Icon(Icons.arrow_forward_rounded,

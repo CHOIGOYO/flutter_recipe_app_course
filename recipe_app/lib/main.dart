@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app/core/presentation/components/custom_button.dart';
+import 'package:recipe_app/core/presentation/components/custom_inputField.dart';
 import 'package:recipe_app/ui/color_styles.dart';
 import 'package:recipe_app/ui/text_styles.dart';
 
@@ -50,26 +51,28 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: TextStyles.normalTextBold),
             size: ButtonSize.big,
           ),
-          CustomButton(
-            onPressed: () {},
-            haveIcon: true,
-            isDisabled: true,
-            text: CustomText(
-                text: 'Button',
-                color: ColorStyles.white,
-                style: TextStyles.normalTextBold),
-            size: ButtonSize.big,
-          ),
-          CustomButton(
-            onPressed: () {},
-            haveIcon: false,
+          CustomInputfield(
+            labelText: 'username',
+            hintText: 'enter your username',
             isDisabled: false,
-            text: CustomText(
-                text: 'Button',
-                color: ColorStyles.white,
-                style: TextStyles.normalTextBold),
-            size: ButtonSize.medium,
           ),
+          CustomInputfield(
+            labelText: 'password',
+            hintText: 'enter your password',
+            isPassword: true,
+            isDisabled: false,
+          ),
+          CustomInputfield(
+            labelText: 'search',
+            hintText: '',
+            haveSearchIcon: true,
+          ),
+          CustomInputfield(
+            labelText: 'search',
+            hintText: 'disabled',
+            haveSearchIcon: true,
+            isDisabled: true,
+          )
         ],
       ),
     );
