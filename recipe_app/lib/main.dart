@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_app/core/presentation/components/big_button.dart';
+import 'package:recipe_app/core/presentation/components/custom_button.dart';
 import 'package:recipe_app/ui/color_styles.dart';
 import 'package:recipe_app/ui/text_styles.dart';
 
@@ -14,11 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      title: 'recipe_app',
       home: const MyHomePage(),
     );
   }
@@ -42,8 +38,38 @@ class _MyHomePageState extends State<MyHomePage> {
               color: ColorStyles.black,
               style: TextStyles.largeTextBold)),
       body: ListView(
-        children: const <Widget>[
-          BigButton(),
+        children: <Widget>[
+          CustomButton(
+            onPressed: () {
+              debugPrint('Big Button pressed');
+            },
+            haveIcon: true,
+            text: CustomText(
+                text: 'Button',
+                color: ColorStyles.white,
+                style: TextStyles.normalTextBold),
+            size: ButtonSize.big,
+          ),
+          CustomButton(
+            onPressed: () {},
+            haveIcon: true,
+            isDisabled: true,
+            text: CustomText(
+                text: 'Button',
+                color: ColorStyles.white,
+                style: TextStyles.normalTextBold),
+            size: ButtonSize.big,
+          ),
+          CustomButton(
+            onPressed: () {},
+            haveIcon: false,
+            isDisabled: false,
+            text: CustomText(
+                text: 'Button',
+                color: ColorStyles.white,
+                style: TextStyles.normalTextBold),
+            size: ButtonSize.medium,
+          ),
         ],
       ),
     );
