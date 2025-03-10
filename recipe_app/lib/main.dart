@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:recipe_app/core/presentation/components/coustom_filter_button.dart';
 import 'package:recipe_app/core/presentation/components/custom_button.dart';
 import 'package:recipe_app/core/presentation/components/custom_inputField.dart';
+import 'package:recipe_app/core/presentation/components/custom_tab.dart';
 import 'package:recipe_app/core/presentation/components/thumps_button.dart';
 import 'package:recipe_app/ui/color_styles.dart';
 import 'package:recipe_app/ui/text_styles.dart';
@@ -85,7 +86,22 @@ class _MyHomePageState extends State<MyHomePage> {
                 haveIcon: true,
               ),
               CoustomFilterButton(
+                text: '5',
+                onTap: () {
+                  debugPrint('5 Button pressed');
+                },
+                isPressed: true,
+                haveIcon: true,
+              ),
+              CoustomFilterButton(
                 text: 'text',
+                onTap: () {
+                  debugPrint('text Button pressed');
+                },
+              ),
+              CoustomFilterButton(
+                text: 'text',
+                isPressed: true,
                 onTap: () {
                   debugPrint('text Button pressed');
                 },
@@ -105,9 +121,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   debugPrint('👎 Button pressed');
                 },
                 text: '3',
-              )
+              ),
             ],
-          )
+          ),
+          CustomTab(
+            labels: ['tab1', 'tab2'],
+            selectedIndex: 0,
+          ),
         ],
       ),
     );
