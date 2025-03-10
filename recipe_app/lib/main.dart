@@ -9,6 +9,7 @@ import 'package:recipe_app/ui/text_styles.dart';
 
 void main() {
   runApp(const MyApp());
+  // 커밋 테스트용 주석
 }
 
 class MyApp extends StatelessWidget {
